@@ -1,0 +1,53 @@
+.header-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #126e51;
+    color: white;
+    z-index: 20;
+    height: 50px;
+    position: relative;
+    padding: 0 10px;
+}
+
+.header-logo {
+    width: 10px;
+    height: 9px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.menu-font {
+    margin-left: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.user-icon {
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.wallet-amount {
+    padding-top: 3px;
+    color: #fff;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    white-space: nowrap;
+    word-break: break-all;
+    cursor: pointer;
+}

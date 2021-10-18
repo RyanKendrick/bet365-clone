@@ -1,0 +1,31 @@
+.sportcard-container {
+    display: flex;
+    flex: 1 0 auto;
+    align-items: center;
+    height: 69px;
+    max-width: 100px;
+    flex-direction: column;
+    padding: 10px 12px 5px;
+    background-color: #383838;
+    border-bottom: 1px solid #367a65;
+    cursor: pointer;
+    position: relative;
+    color: white;
+}
+
+.sport-image {
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 30px;
+    width: 30px;
+}
+
+.sport-name {
+    font-size: 11px;
+    line-height: 17px;
+    color: #ddd;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import '../src/css/header.css'
+import Header from './components/Header';
+import SportsData from './data/sports';
+import SportCard from './components/Sports';
+import "../src/css/sportcard.css"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      < Header />
+      <div className="sports-container">
+        {SportsData?.map(({img, name}) => (
+          <SportCard
+            key={img}
+            img={img}
+            name={name} />
+        ))}
+      </div>
     </div>
   );
 }
