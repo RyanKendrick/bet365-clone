@@ -164,10 +164,8 @@ function Competition({ competition, apiKey, sportKey }) {
 }
 function Event({ event, sportKey }) {
   const eventMarkets = React.useMemo(() => {
-    const [markets, err] = getMarket(event, sportMarkets[sportKey][0]);
-    if (err) {
-      return [];
-    }
+    const [markets] = getMarket(event, sportMarkets[sportKey][0]);
+
     return markets;
   }, [event, sportKey]);
   if (!eventMarkets || !eventMarkets.length) {
