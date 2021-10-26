@@ -4,6 +4,7 @@ import Header from './components/Header';
 // import SportsData from './data/sports';
 // import SportCards from './components/Sports';
 import "../src/css/sportcard.css"
+import "../src/css/competition.css"
 // import InPlay from './components/InPlay';
 
 import React from "react";
@@ -40,12 +41,24 @@ const sports = [
     img: "./imgs/sports/basketball.svg"
   },
   {
-      name: "soccer",
-      img: "./imgs/sports/soccer.svg"
+    name: "soccer",
+    img: "./imgs/sports/soccer.svg"
   },
   {
-      name: "tennis",
-      img: "./imgs/sports/tennis.svg"
+    name: "tennis",
+    img: "./imgs/sports/tennis.svg"
+  },
+  {
+    name: "american-football",
+    img: "./imgs/sports/football.svg"
+  },
+  {
+    name: "ice-hockey",
+    img: "./imgs/sports/hockey.svg"
+  },
+  {
+    name: "baseball",
+    img: "./imgs/sports/baseball.svg"
   },
 ]
 
@@ -78,31 +91,26 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-      <div>
-        {/* <select value={sport} onChange={(e) => setSport(e.target.value)}>
-          {sports.map((s) => (
-            <option value={s}>{getSportsName(s, Locale.en)}</option>
-          ))}
-        </select> */}
+      {/* Sportcards section */}
+      <div className="sportcards-section">
 
         {sports.map((s) => (
-
-           
-              <button value={s.name} onClick={(e) => setSport(e.target.value)}>
-
-                <img className="sport-image" src={s.img} alt=""/>
-                {getSportsName(s.name, Locale.en)}
-                
-                </button>
-
-
+      
+            <button className='sportcard-container' value={s.name} onClick={(e) => setSport(e.target.value)}>
+              <img className="sport-image" src={s.img} alt=""/>
+              {getSportsName(s.name, Locale.en)}
+            </button>
+        
           ))}
 
       </div>
+
+      {/* Competitions aka Leagues list */}
       {loading ? (
         <Loading />
       ) : (
         competitions.map((c) => (
+          
           <Competition
             competition={c}
             apiKey={apiKey}
