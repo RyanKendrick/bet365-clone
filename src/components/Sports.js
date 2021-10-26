@@ -1,12 +1,28 @@
-function SportCard({name, img}) {
-    return (
-        <div className='sportcard-container'>
-            <img className="sport-image" src={img} alt=""/>
+import React from "react";
+import SportsData from "../data/sports";
 
-            <div className="sport-name">{name}</div>
+
+const SportCard = () => {
+    return (
+        
+        
+        <div className="sportcards-section">
+
+           { SportsData?.map(({ img, name }) => (
             
+                <div className='sportcard-container'>
+            
+                    <img className="sport-image" src={img} alt=""/>
+                    <div className="sport-name">{name}</div>
+            
+                </div>
+            ))}
         </div>
     )
 }
 
-export default SportCard
+
+
+
+
+export default SportCard;

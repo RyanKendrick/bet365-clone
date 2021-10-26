@@ -29,3 +29,8 @@
     overflow: hidden;
     white-space: nowrap;
 }
+
+.sportcards-section {
+    display: flex;
+    flex-direction: row;
+}
