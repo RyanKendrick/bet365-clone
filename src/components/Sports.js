@@ -2,22 +2,24 @@ import React from "react";
 import SportsData from "../data/sports";
 
 
-const SportCard = () => {
+const SportCards = () => {
     return (
         
-        
-        <div className="sportcards-section">
-
-           { SportsData?.map(({ img, name }) => (
+        <div>
+            <div className="sportcards-section">
+               { SportsData?.map(({ img, name }) => (
             
-                <div className='sportcard-container'>
+                    <div className='sportcard-container'>
             
-                    <img className="sport-image" src={img} alt=""/>
-                    <div className="sport-name">{name}</div>
+                        <img className="sport-image" src={img} alt=""/>
+                        <div className="sport-name">{name}</div>
             
-                </div>
-            ))}
+                    </div>
+                ))}
+            </div>
+            <div>sports schedule / odds</div>
         </div>
+        
     )
 }
 
@@ -25,4 +27,4 @@ const SportCard = () => {
 
 
 
-export default SportCard;
+export default SportCards;
