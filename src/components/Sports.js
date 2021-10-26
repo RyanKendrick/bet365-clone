@@ -9,17 +9,16 @@ const SportCards = () => {
             <div className="sportcards-section">
                { SportsData?.map(({ img, name }) => (
             
-                    <div className='sportcard-container'>
+                    <a href="/" className='sportcard-container'>
             
                         <img className="sport-image" src={img} alt=""/>
                         <div className="sport-name">{name}</div>
-            
-                    </div>
+                        <button>Get Sport info</button>
+                    </a>
+                    
                 ))}
             </div>
-            <div>sports schedule / odds</div>
         </div>
-        
     )
 }
 
