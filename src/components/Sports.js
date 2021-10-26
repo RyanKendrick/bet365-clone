@@ -13,7 +13,6 @@ const SportCards = () => {
             
                         <img className="sport-image" src={img} alt=""/>
                         <div className="sport-name">{name}</div>
-                        <button>Get Sport info</button>
                     </a>
                     
                 ))}

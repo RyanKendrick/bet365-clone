@@ -1,3 +1,11 @@
+import './App.css';
+import '../src/css/header.css'
+import Header from './components/Header';
+// import SportsData from './data/sports';
+// import SportCards from './components/Sports';
+import "../src/css/sportcard.css"
+// import InPlay from './components/InPlay';
+
 import React from "react";
 import {
   MarketType,
@@ -24,17 +32,34 @@ function getCompetition(competition, apiKey) {
     }
   );
 }
-const sports = ["soccer", "basketball", "tennis"];
+// const sports = ["basketball", "soccer", "tennis"];
+
+const sports = [
+  {
+    name: "basketball",
+    img: "./imgs/sports/basketball.svg"
+  },
+  {
+      name: "soccer",
+      img: "./imgs/sports/soccer.svg"
+  },
+  {
+      name: "tennis",
+      img: "./imgs/sports/tennis.svg"
+  },
+]
+
+console.log('sports[0].name', sports[0].name)
 const sportMarkets = {
-  soccer: [MarketType.soccer_match_odds],
   basketball: [MarketType.basketball_1x2],
+  soccer: [MarketType.soccer_match_odds],
   tennis: [MarketType.tennis_winner]
 };
 export default function App() {
   const [apiKey] = React.useState('eyJhbGciOiJSUzI1NiIsImtpZCI6Img4LThRX1YwZnlUVHRPY2ZXUWFBNnV2bktjcnIyN1YzcURzQ2Z4bE44MGMiLCJ0eXAiOiJKV1QifQ.eyJhY2Nlc3NfdGllciI6ImFmZmlsaWF0ZSIsImV4cCI6MTk1MDYxOTkzNSwiaWF0IjoxNjM1MjU5OTM1LCJqdGkiOiIxYmQ2ZTAzMC0zZTk4LTRkOWEtYWE4Ni0zMDU0NjRiNmNjOGMiLCJzdWIiOiI1OTA1MDQ2Mi1iYTk4LTRiZDEtYTU2ZC00N2U0ZDAxYWNhNmMiLCJ0ZW5hbnQiOiJjbG91ZGJldCIsInV1aWQiOiI1OTA1MDQ2Mi1iYTk4LTRiZDEtYTU2ZC00N2U0ZDAxYWNhNmMifQ.Bjds2SEjImayK2RQc2siY_kF-I7hYuFA9IMEFzIaVE0a_n2KMUBqMwCyd-TJAoRL68b9yNmKC1tbBmjuW5BKkufaXj5l0UPUco9LiXrN6p0oALian7K1IlLaP8Z1Dg48OTKR7mH1c7qDuMteErCSeb-D-5g-b8Ebk9zd5IjMovMJJBpCGpOHnX7seoiR866SIOcw3ynCpPiEv0bsR-ViSjQ1YrucOWAKsOD09stqpa0McTu-e6cWepU7kWLkzuQWKFJbeSes0rF-VX5yfo3gSeDfdkyWaYfuGt_dQXzZDWhT0rwcI1Ro2vTcWop8vtB5OLZvGSDSDwEgXDIvGxX7FQ');
-  const [sport, setSport] = React.useState(sports[0]);
+  const [sport, setSport] = React.useState(sports[0].name);
   const [loading, setLoading] = React.useState(false);
-  const [competitions, setCompetitions] = React.useState([]);
+  const [competitions, setCompetitions] = React.useState(['']);
   React.useEffect(() => {
     if (!sport || !apiKey) {
       return;
@@ -52,19 +77,24 @@ export default function App() {
 
   return (
     <div className="App">
+      <Header />
       <div>
-        <label for="sport">Sports</label>
-        <select value={sport} onChange={(e) => setSport(e.target.value)}>
+        {/* <select value={sport} onChange={(e) => setSport(e.target.value)}>
           {sports.map((s) => (
             <option value={s}>{getSportsName(s, Locale.en)}</option>
           ))}
-        </select>
+        </select> */}
 
         {sports.map((s) => (
 
            
-              <button value={s} onClick={(e) => setSport(e.target.value)}>{getSportsName(s, Locale.en)}</button>
-          
+              <button value={s.name} onClick={(e) => setSport(e.target.value)}>
+
+                <img className="sport-image" src={s.img} alt=""/>
+                {getSportsName(s.name, Locale.en)}
+                
+                </button>
+
 
           ))}
 
