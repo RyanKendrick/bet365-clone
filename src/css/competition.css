@@ -1,7 +1,21 @@
-.competition {
+.event-title {
     background-color: #585858;
     border-top: 1px solid #367a65;
-    align-items: center;
+    cursor: pointer;
+    color: #5fe8bd;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.selections {
+    background-color: #585858;
+    display: flex;
+    color: white;
+}
+
+.competition-title {
+    background-color: #585858;
+    border-top: 1px solid #367a65;
     cursor: pointer;
     color: #5fe8bd;
     font-size: 16px;

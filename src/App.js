@@ -49,25 +49,52 @@ const sports = [
     img: "./imgs/sports/tennis.svg"
   },
   {
-    name: "american-football",
+    name: "american_football",
     img: "./imgs/sports/football.svg"
   },
   {
-    name: "ice-hockey",
+    name: "ice_hockey",
     img: "./imgs/sports/hockey.svg"
   },
   {
     name: "baseball",
     img: "./imgs/sports/baseball.svg"
   },
+  {
+    name: "esport_nba2k",
+    img: "./imgs/sports/nba2k.svg"
+  },
+  {
+    name: "esport_fifa",
+    img: "./imgs/sports/fifa22.png"
+  },
+  {
+    name: "league_of_legends",
+    img: "./imgs/sports/lol.svg"
+  },
+  {
+    name: "esport_valorant",
+    img: "./imgs/sports/valorant.png"
+  },
+  
 ]
+
+
 
 console.log('sports[0].name', sports[0].name)
 const sportMarkets = {
   basketball: [MarketType.basketball_1x2],
   soccer: [MarketType.soccer_match_odds],
-  tennis: [MarketType.tennis_winner]
+  tennis: [MarketType.tennis_winner],
+  ice_hockey: [MarketType.ice_hockey_1x2],
+  baseball: [MarketType.baseball_run_line],
+  american_football: [MarketType.american_football_handicap],
+  esport_nba2k: [MarketType.esport_nba2k_1x2],
+  esport_fifa: [MarketType.esport_fifa_match_odds],
+  league_of_legends: [MarketType.league_of_legends_winner],
+  esport_valorant: [MarketType.esport_valorant_winner],
 };
+console.log('sportMarkets', sportMarkets)
 export default function App() {
   const [apiKey] = React.useState('eyJhbGciOiJSUzI1NiIsImtpZCI6Img4LThRX1YwZnlUVHRPY2ZXUWFBNnV2bktjcnIyN1YzcURzQ2Z4bE44MGMiLCJ0eXAiOiJKV1QifQ.eyJhY2Nlc3NfdGllciI6ImFmZmlsaWF0ZSIsImV4cCI6MTk1MDYxOTkzNSwiaWF0IjoxNjM1MjU5OTM1LCJqdGkiOiIxYmQ2ZTAzMC0zZTk4LTRkOWEtYWE4Ni0zMDU0NjRiNmNjOGMiLCJzdWIiOiI1OTA1MDQ2Mi1iYTk4LTRiZDEtYTU2ZC00N2U0ZDAxYWNhNmMiLCJ0ZW5hbnQiOiJjbG91ZGJldCIsInV1aWQiOiI1OTA1MDQ2Mi1iYTk4LTRiZDEtYTU2ZC00N2U0ZDAxYWNhNmMifQ.Bjds2SEjImayK2RQc2siY_kF-I7hYuFA9IMEFzIaVE0a_n2KMUBqMwCyd-TJAoRL68b9yNmKC1tbBmjuW5BKkufaXj5l0UPUco9LiXrN6p0oALian7K1IlLaP8Z1Dg48OTKR7mH1c7qDuMteErCSeb-D-5g-b8Ebk9zd5IjMovMJJBpCGpOHnX7seoiR866SIOcw3ynCpPiEv0bsR-ViSjQ1YrucOWAKsOD09stqpa0McTu-e6cWepU7kWLkzuQWKFJbeSes0rF-VX5yfo3gSeDfdkyWaYfuGt_dQXzZDWhT0rwcI1Ro2vTcWop8vtB5OLZvGSDSDwEgXDIvGxX7FQ');
   const [sport, setSport] = React.useState(sports[0].name);
@@ -149,12 +176,14 @@ function Competition({ competition, apiKey, sportKey }) {
         {competition.name}
       </div>
       {expanded && (
-        <div>
+        <div className="event-card-section">
           {loading ? (
             <Loading />
           ) : (
             events.map((e) => (
-              <Event event={e} key={e.id} sportKey={sportKey} />
+              <div className="event-card">
+                <Event event={e} key={e.id} sportKey={sportKey} />
+              </div>
             ))
           )}
         </div>
