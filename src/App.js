@@ -117,35 +117,38 @@ export default function App() {
 
   return (
     <div className="App">
-      <Header />
-      {/* Sportcards section */}
-      <div className="sportcards-section">
-
-        {sports.map((s) => (
-      
-            <button className='sportcard-container' value={s.name} onClick={(e) => setSport(e.target.value)}>
-              <img className="sport-image" src={s.img} alt=""/>
-              {getSportsName(s.name, Locale.en)}
-            </button>
+    
+        <Header />
+        {/* Sportcards section */}
+        <div className="app-content">
+          <div className="sportcards-section">
+            {sports.map((s) => (
         
-          ))}
-
-      </div>
-
-      {/* Competitions aka Leagues list */}
-      {loading ? (
-        <Loading />
-      ) : (
-        competitions.map((c) => (
+                <button className='sportcard-container' value={s.name} onClick={(e) => setSport(e.target.value)}>
+                  <img className="sport-image" src={s.img} alt=""/>
+                  {getSportsName(s.name, Locale.en)}
+                </button>
+        
+              ))}
+          </div>
+      
+        {/* Competitions aka Leagues list */}
+        <div className="competition-section">
+          {loading ? (
+            <Loading />
+          ) : (
+            competitions.map((c) => (
           
-          <Competition
-            competition={c}
-            apiKey={apiKey}
-            key={c.key}
-            sportKey={sport}
-          />
-        ))
-      )}
+              <Competition
+                competition={c}
+                apiKey={apiKey}
+                key={c.key}
+                sportKey={sport}
+              />
+            ))
+          )}
+        </div>
+      </div>
     </div>
   );
 }
