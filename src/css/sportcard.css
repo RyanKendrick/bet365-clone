@@ -12,6 +12,25 @@
     color: white;
 }
 
+
+@media only screen and (min-width: 800px) {
+    .sportcard-container {
+        display: flex;
+        align-items: flex-start;
+        max-width: 100px;
+        flex-direction: column;
+        padding: 10px 12px 5px;
+        background-color: #383838;
+        border-right: 1px solid #367a65;
+        border-bottom: none;
+        cursor: pointer;
+        position: relative;
+        color: white;
+        height: auto;
+    }
+}
+
+
 .sport-image {
     background-position: bottom;
     background-repeat: no-repeat;
@@ -19,6 +38,13 @@
     height: 30px;
     width: 30px;
 }
+
+@media only screen and (min-width: 800px) {
+    .sport-image {
+        display: none;
+    }
+}
+
 
 .sport-name {
     font-size: 11px;
@@ -32,6 +58,7 @@
 .sportcards-section {
     display: flex;
     flex-direction: column;
+    overflow: auto; 
 }
 
 @media only screen and (max-width: 800px) {
