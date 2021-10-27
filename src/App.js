@@ -83,7 +83,7 @@ const sports = [
 
 console.log('sports[0].name', sports[0].name)
 const sportMarkets = {
-  basketball: [MarketType.basketball_1x2],
+  basketball: [MarketType.basketball_handicap],
   soccer: [MarketType.soccer_match_odds],
   tennis: [MarketType.tennis_winner],
   ice_hockey: [MarketType.ice_hockey_1x2],
@@ -205,9 +205,10 @@ function Event({ event, sportKey }) {
   }
   return (
     <div>
-      <div className="event-title">{event.name}</div>
+      {/* <div className="event-title">{event.name}</div> */}
       {eventMarkets.map((m) => {
         const line = m.lines[0];
+        console.log("line", line)
         if (!line) {
           return null;
         }
@@ -215,8 +216,11 @@ function Event({ event, sportKey }) {
           <div className="selections">
             {line.map((outcome) => (
               <div className="selection">
-                {outcome.name} <br />
-                {outcome.back.price}
+                <div className="outcome-name">{outcome.name}</div> <br />
+                <div className="odds">
+                  <div>{outcome.variables.handicap}</div>
+                  <div className="probability">{outcome.back.probability}</div>
+                </div>
               </div>
             ))}
           </div>

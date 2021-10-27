@@ -10,6 +10,11 @@
   }
 }
 
+.loading {
+  background-color: #585858;
+  color: white;
+}
+
 /* .sports-container {
   display: flex;
   flex-direction: row;

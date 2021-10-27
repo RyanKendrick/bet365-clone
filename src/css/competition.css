@@ -5,12 +5,16 @@
     color: #5fe8bd;
     font-size: 16px;
     font-weight: 700;
+    text-align: center;
+    padding-bottom: 1rem;
 }
 
 .selections {
     background-color: #585858;
     display: flex;
     color: white;
+    justify-content: space-evenly;
+    padding-bottom: 1em;
 }
 
 .competition-title {
@@ -26,4 +30,18 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+
+.probability {
+    color: #ffdf1b;
+}
+
+.odds {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.outcome-name {
+    padding-bottom: 1em;
 }
