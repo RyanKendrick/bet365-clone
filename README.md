@@ -1,5 +1,7 @@
 ## To get it running:
 
+### `Add your API key`
+
 ### `npm install`
 
 ### `npm start`
