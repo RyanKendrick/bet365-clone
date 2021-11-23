@@ -2,13 +2,9 @@
 
 #### [See it live](https://bet365-clone.vercel.app/)
 
-## To get it running:
+![Homepage Gif](https://github.com/RyanKendrick/bet365-clone/blob/master/public/imgs/get-odds-demo.gif?raw=true)
 
-### `Add your API key`
-
-### `npm install`
-
-### `npm start`
+![Homepage Gif](https://github.com/RyanKendrick/bet365-clone/blob/master/public/imgs/responsive-demo.gif?raw=true)
 
 
 
