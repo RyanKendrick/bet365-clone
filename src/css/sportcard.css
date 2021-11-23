@@ -10,6 +10,8 @@
     cursor: pointer;
     position: relative;
     color: white;
+    border-top: none;
+    border-left: none;
 }
 
 
@@ -17,7 +19,7 @@
     .sportcard-container {
         display: flex;
         align-items: flex-start;
-        max-width: 100px;
+        max-width: 100%;
         flex-direction: column;
         padding: 10px 12px 5px;
         background-color: #383838;
@@ -27,6 +29,9 @@
         position: relative;
         color: white;
         height: auto;
+        border-top: none;
+        border-left: none;
+        text-align: left;
     }
 }
 
@@ -58,14 +63,16 @@
 .sportcards-section {
     display: flex;
     flex-direction: column;
-    overflow: auto; 
+    overflow: auto;
+    width: 230px;  
 }
 
 @media only screen and (max-width: 800px) {
     .sportcards-section {
         display: flex;
         flex-direction: row;
-        overflow: auto;     
+        overflow: auto; 
+        width: 100%;
     }
   }
 

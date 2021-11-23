@@ -119,6 +119,9 @@ export default function App() {
     <div className="App">
     
         <Header />
+        <div class="spacer">
+            &nbsp;
+        </div>
         {/* Sportcards section */}
         <div className="app-content">
           <div className="sportcards-section">
@@ -138,13 +141,17 @@ export default function App() {
             <Loading />
           ) : (
             competitions.map((c) => (
-          
-              <Competition
-                competition={c}
-                apiKey={apiKey}
-                key={c.key}
-                sportKey={sport}
-              />
+
+              
+              <div>
+                
+                <Competition
+                  competition={c}
+                  apiKey={apiKey}
+                  key={c.key}
+                  sportKey={sport}
+                />
+              </div>
             ))
           )}
         </div>
