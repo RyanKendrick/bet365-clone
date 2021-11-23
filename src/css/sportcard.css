@@ -71,7 +71,7 @@
     .sportcards-section {
         display: flex;
         flex-direction: row;
-        overflow: auto; 
+        overflow: hidden; 
         width: 100%;
     }
   }
