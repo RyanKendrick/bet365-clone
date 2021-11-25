@@ -7,6 +7,7 @@ import "../src/css/sportcard.css"
 import "../src/css/competition.css"
 // import InPlay from './components/InPlay';
 
+
 import React from "react";
 import {
   MarketType,
@@ -14,6 +15,11 @@ import {
   Locale,
   getSportsName
 } from "@cloudbet/market-helper";
+require('dotenv').config();
+
+
+
+
 function getSport(sport, apiKey) {
   return fetch(`https://sports-api.cloudbet.com/pub/v2/odds/sports/${sport}`, {
     headers: {
@@ -95,8 +101,11 @@ const sportMarkets = {
   esport_valorant: [MarketType.esport_valorant_winner],
 };
 console.log('sportMarkets', sportMarkets)
+console.log('process.env.REACT_APP_API_KEY', process.env.REACT_APP_API_KEY);
+
+
 export default function App() {
-  const [apiKey] = React.useState('eyJhbGciOiJSUzI1NiIsImtpZCI6Img4LThRX1YwZnlUVHRPY2ZXUWFBNnV2bktjcnIyN1YzcURzQ2Z4bE44MGMiLCJ0eXAiOiJKV1QifQ.eyJhY2Nlc3NfdGllciI6ImFmZmlsaWF0ZSIsImV4cCI6MTk1MDYxOTkzNSwiaWF0IjoxNjM1MjU5OTM1LCJqdGkiOiIxYmQ2ZTAzMC0zZTk4LTRkOWEtYWE4Ni0zMDU0NjRiNmNjOGMiLCJzdWIiOiI1OTA1MDQ2Mi1iYTk4LTRiZDEtYTU2ZC00N2U0ZDAxYWNhNmMiLCJ0ZW5hbnQiOiJjbG91ZGJldCIsInV1aWQiOiI1OTA1MDQ2Mi1iYTk4LTRiZDEtYTU2ZC00N2U0ZDAxYWNhNmMifQ.Bjds2SEjImayK2RQc2siY_kF-I7hYuFA9IMEFzIaVE0a_n2KMUBqMwCyd-TJAoRL68b9yNmKC1tbBmjuW5BKkufaXj5l0UPUco9LiXrN6p0oALian7K1IlLaP8Z1Dg48OTKR7mH1c7qDuMteErCSeb-D-5g-b8Ebk9zd5IjMovMJJBpCGpOHnX7seoiR866SIOcw3ynCpPiEv0bsR-ViSjQ1YrucOWAKsOD09stqpa0McTu-e6cWepU7kWLkzuQWKFJbeSes0rF-VX5yfo3gSeDfdkyWaYfuGt_dQXzZDWhT0rwcI1Ro2vTcWop8vtB5OLZvGSDSDwEgXDIvGxX7FQ');
+  const [apiKey] = React.useState(process.env.REACT_APP_API_KEY);
   const [sport, setSport] = React.useState(sports[0].name);
   const [loading, setLoading] = React.useState(false);
   const [competitions, setCompetitions] = React.useState(['']);
